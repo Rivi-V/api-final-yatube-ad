@@ -1,8 +1,3 @@
-<<<<<<< ours
-<<<<<<< ours
-=======
-=======
->>>>>>> theirs
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
@@ -18,8 +13,8 @@ class PostSerializer(serializers.ModelSerializer):
     )
 
     class Meta:
-        fields = '__all__'
         model = Post
+        fields = '__all__'
 
 
 class CommentSerializer(serializers.ModelSerializer):
@@ -29,19 +24,15 @@ class CommentSerializer(serializers.ModelSerializer):
     )
 
     class Meta:
-        fields = '__all__'
         model = Comment
+        fields = '__all__'
         read_only_fields = ('post',)
 
 
 class GroupSerializer(serializers.ModelSerializer):
-<<<<<<< ours
-
-=======
->>>>>>> theirs
     class Meta:
-        fields = '__all__'
         model = Group
+        fields = '__all__'
 
 
 class FollowSerializer(serializers.ModelSerializer):
@@ -55,8 +46,8 @@ class FollowSerializer(serializers.ModelSerializer):
     )
 
     class Meta:
-        fields = ('user', 'following')
         model = Follow
+        fields = ('user', 'following')
 
     def validate_following(self, value):
         request = self.context['request']
@@ -77,7 +68,3 @@ class FollowSerializer(serializers.ModelSerializer):
                 'Вы уже подписаны на этого пользователя.'
             )
         return attrs
-<<<<<<< ours
->>>>>>> theirs
-=======
->>>>>>> theirs
