@@ -1,6 +1,12 @@
+<<<<<<< ours
+=======
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+    TokenVerifyView,
+)
 
 from api.views import CommentViewSet, FollowViewSet, GroupViewSet, PostViewSet
 
@@ -21,9 +27,15 @@ urlpatterns = [
     path(
         'v1/posts/<int:post_id>/comments/<int:pk>/',
         CommentViewSet.as_view(
-            {'get': 'retrieve', 'put': 'update', 'patch': 'partial_update', 'delete': 'destroy'}
+            {
+                'get': 'retrieve',
+                'put': 'update',
+                'patch': 'partial_update',
+                'delete': 'destroy',
+            }
         ),
         name='comments-detail',
     ),
     path('v1/', include(router_v1.urls)),
 ]
+>>>>>>> theirs
