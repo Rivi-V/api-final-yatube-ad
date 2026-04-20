@@ -1,5 +1,8 @@
 <<<<<<< ours
+<<<<<<< ours
 =======
+=======
+>>>>>>> theirs
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
@@ -32,7 +35,10 @@ class CommentSerializer(serializers.ModelSerializer):
 
 
 class GroupSerializer(serializers.ModelSerializer):
+<<<<<<< ours
 
+=======
+>>>>>>> theirs
     class Meta:
         fields = '__all__'
         model = Group
@@ -71,4 +77,7 @@ class FollowSerializer(serializers.ModelSerializer):
                 'Вы уже подписаны на этого пользователя.'
             )
         return attrs
+<<<<<<< ours
+>>>>>>> theirs
+=======
 >>>>>>> theirs

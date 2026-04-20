@@ -1,5 +1,8 @@
 <<<<<<< ours
+<<<<<<< ours
 =======
+=======
+>>>>>>> theirs
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, mixins, viewsets
@@ -12,7 +15,11 @@ from api.serializers import (
     GroupSerializer,
     PostSerializer,
 )
+<<<<<<< ours
 from posts.models import Group, Post, Follow
+=======
+from posts.models import Follow, Group, Post
+>>>>>>> theirs
 
 
 class PostViewSet(viewsets.ModelViewSet):
@@ -43,9 +50,17 @@ class GroupViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = GroupSerializer
 
 
+<<<<<<< ours
 class FollowViewSet(mixins.CreateModelMixin,
                     mixins.ListModelMixin,
                     viewsets.GenericViewSet):
+=======
+class FollowViewSet(
+    mixins.CreateModelMixin,
+    mixins.ListModelMixin,
+    viewsets.GenericViewSet,
+):
+>>>>>>> theirs
     serializer_class = FollowSerializer
     permission_classes = (IsAuthenticated,)
     filter_backends = (DjangoFilterBackend, filters.SearchFilter)
@@ -58,4 +73,7 @@ class FollowViewSet(mixins.CreateModelMixin,
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+<<<<<<< ours
+>>>>>>> theirs
+=======
 >>>>>>> theirs
